@@ -28,9 +28,22 @@ namespace SampleGraphqlApp.Service.Test.Services
                 .Setup(s => s.ByProperties(It.IsAny<ExistingStudent>()))
                 .ReturnsAsync(intermediaryObject);
 
-            IEnumerable<Book> books = await _studentService.GetAvailableBooks(It.IsAny<string>());
+            IEnumerable<Book>? books = await _studentService.GetAvailableBooks(It.IsAny<string>());
 
             Assert.Equal(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(expectedResult), Formatting.None), JsonConvert.SerializeObject(books));
+        }
+
+        [Theory]
+        [ClassData(typeof(GetEnrolledCollegeTestSuite))]
+        public async Task GetEnrolledCollegeTest(string expectedResult, Student? intermediaryObject)
+        {
+            _studentRepositoryMock
+                .Setup(s => s.ById(It.IsAny<string>()))
+                .ReturnsAsync(intermediaryObject);
+
+            College? college = await _studentService.GetEnrolledCollege(It.IsAny<string>());
+
+            Assert.Equal(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(expectedResult), Formatting.None), JsonConvert.SerializeObject(college));
         }
     }
 }
