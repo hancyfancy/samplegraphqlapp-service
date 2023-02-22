@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="SampleGraphqlApp.Data" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SampleGraphqlApp.Service.Interface\SampleGraphqlApp.Service.Interface.csproj" />
+    <PackageReference Include="SampleGraphqlApp.Service.Interface" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
