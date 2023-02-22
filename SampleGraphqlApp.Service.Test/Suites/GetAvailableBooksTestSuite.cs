@@ -17,33 +17,19 @@ namespace SampleGraphqlApp.Service.Test.Suites
             //Populated
             yield return new object[] {
                 $@"[
-	                {{
-		                ""id"": ""S1003"",
-		                ""firstName"": ""Kiran"",
-		                ""lastName"": ""Panigrahi"",
-		                ""email"": ""kiran.panigrahi@tutorialpoint.org"",
-		                ""college"": 
-		                {{
-			                ""id"": ""col-101"",
-			                ""name"": ""AMU"",
-			                ""location"": ""Uttar Pradesh"",
-			                ""rating"": 5,
-			                ""books"": 
-			                [
-				                {{
-					                ""id"": ""bok-103"",
-					                ""name"": ""The Last Flair Bender"",
-					                ""author"": ""Manny Abuduo""
-				                }},
-				                {{
-					                ""id"": ""bok-105"",
-					                ""name"": ""On the wild side"",
-					                ""author"": ""Harriett Osbyorne""
-				                }}
-			                ]
-		                }}
-	                }}
-                ]",
+				    {{
+					    ""id"": ""bok-103"",
+					    ""name"": ""The Last Flair Bender"",
+					    ""author"": ""Manny Abuduo"",
+                        ""colleges"":null
+				    }},
+				    {{
+					    ""id"": ""bok-105"",
+					    ""name"": ""On the wild side"",
+					    ""author"": ""Harriett Osbyorne"",
+                        ""colleges"":null
+				    }}
+			    ]",
                 new List<Student>() { 
                     new Student() { 
                         id = "S1003",

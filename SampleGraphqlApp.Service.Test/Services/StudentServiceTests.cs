@@ -3,14 +3,9 @@ using Newtonsoft.Json;
 using SampleGraphqlApp.Data.Interface.Models.Complete;
 using SampleGraphqlApp.Data.Interface.Models.Transient;
 using SampleGraphqlApp.Data.Interface.Repositories;
-using SampleGraphqlApp.Data.Repositories;
 using SampleGraphqlApp.Service.Interface.Services;
+using SampleGraphqlApp.Service.Services;
 using SampleGraphqlApp.Service.Test.Suites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleGraphqlApp.Service.Test.Services
 {
@@ -19,10 +14,10 @@ namespace SampleGraphqlApp.Service.Test.Services
         private readonly Mock<IStudentRepository> _studentRepositoryMock;
         private readonly IStudentService _studentService;
 
-        public StudentServiceTests(IStudentService studentService)
+        public StudentServiceTests()
         {
             _studentRepositoryMock = new Mock<IStudentRepository>();
-            _studentService = studentService;
+            _studentService = new StudentService(_studentRepositoryMock.Object);
         }
 
         [Theory]
