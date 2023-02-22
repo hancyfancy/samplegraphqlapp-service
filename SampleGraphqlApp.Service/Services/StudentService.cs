@@ -9,7 +9,8 @@ namespace SampleGraphqlApp.Service.Services
     {
         private readonly IStudentRepository _studentRepository;
 
-        public StudentService(IStudentRepository studentRepository) {
+        public StudentService(IStudentRepository studentRepository)
+        {
             _studentRepository = studentRepository;
         }
 
