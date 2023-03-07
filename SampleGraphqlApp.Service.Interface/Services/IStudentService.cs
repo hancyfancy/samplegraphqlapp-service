@@ -7,5 +7,7 @@ namespace SampleGraphqlApp.Service.Interface.Services
         Task<IEnumerable<Book>> GetAvailableBooks(string firstName);
 
         Task<College?> GetEnrolledCollege(string id);
+
+        Task<IEnumerable<Student>?> GetAllStudents();
     }
 }

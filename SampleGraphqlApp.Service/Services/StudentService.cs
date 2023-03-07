@@ -38,5 +38,12 @@ namespace SampleGraphqlApp.Service.Services
 
             return student?.college;
         }
+
+        public async Task<IEnumerable<Student>?> GetAllStudents()
+        {
+            IEnumerable<Student>? students = await _studentRepository.All();
+
+            return students;
+        }
     }
 }
